@@ -9,8 +9,8 @@ public class SingleChoice extends Question {
 	public SingleChoice(String question, boolean answer) {
 		super(question);
 		this.trueFalse = answer;
-		this.answers = new String[2];
-		this.answerIndex = new int[1];
+		super.answers = new String[2];
+		super.answerIndex = new int[1];
 	}
 
 	@Override

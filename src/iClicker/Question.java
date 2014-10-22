@@ -27,12 +27,22 @@ public abstract class Question {
 		return answers;
 	}
 	
-	public String printAnswers() 
+	public String printAllAnswers() 
 	{
 		String tmp = "";
 		
 		for(int i = 0; i < answers.length; i++)
 			tmp += answers[i] + "\n";
+		
+		return tmp;
+	}
+	
+	public String printCorrectAnswers()
+	{
+		String tmp = "";
+		
+		for(int i = 0; i < answerIndex.length; i++)
+				tmp += answers[answerIndex[i]] + " is correct.\n";
 		
 		return tmp;
 	}
