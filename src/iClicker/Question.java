@@ -5,7 +5,8 @@ package iClicker;
  *
  */
 public abstract class Question {
-	
+	//abstract question class, question and answers attributes can technically be anything
+	//but answerIndex will likely always be an int[] since it is simply a mapping of answer indexes
 	protected String question;
 	protected String[] answers;
 	protected int[] answerIndex;
@@ -15,6 +16,7 @@ public abstract class Question {
 		this.question = question;
 	}
 	
+	//leave it up to extended classes to handle their style of answers
 	public abstract void setUpAnswers();
 	
 	public int[] getAnswersIndex()
@@ -28,7 +30,7 @@ public abstract class Question {
 	}
 	
 	public String printAllAnswers() 
-	{
+	{//a sort of toString method for just answers
 		String tmp = "";
 		
 		for(int i = 0; i < answers.length; i++)
@@ -38,7 +40,7 @@ public abstract class Question {
 	}
 	
 	public String printCorrectAnswers()
-	{
+	{//like printAllAnswers, acts like a toString method for just correct Answers
 		String tmp = "";
 		
 		for(int i = 0; i < answerIndex.length; i++)
@@ -48,7 +50,7 @@ public abstract class Question {
 	}
 	
 	public String toString()
-	{
+	{//return the actual question
 		return question;
 	}
 }
